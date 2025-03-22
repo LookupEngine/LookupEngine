@@ -127,8 +127,6 @@ Alternatively, you can create and push tags using the terminal:
    ```shell
    git push origin 'version'
    ```
----#if (GitHubPipeline)
-
 ### Creating a new release on GitHub
 
 To create releases directly on GitHub:
@@ -139,10 +137,6 @@ To create releases directly on GitHub:
 4. Specify the release version and click **Run**.
 
    ![image](https://github.com/user-attachments/assets/088388c1-6055-4d21-8d22-70f047d8f104)
-
-> Set write permissions in the repository settings, this is a prerequisite for publishing a release.
-
-![image](https://github.com/user-attachments/assets/2f1a37dc-d870-4d0d-949e-b5c8e2c34e57)
 
 > To create a release, changelog for the release version is required.
 
