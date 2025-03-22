@@ -19,23 +19,6 @@ sealed partial class Build
     }
 
     /// <summary>
-    ///     Appends the GitHub compare URL to the changelog builder.
-    /// </summary>
-    void WriteGitHubCompareUrl(StringBuilder changelogBuilder)
-    {
-        var tags = GitTasks
-            .Git("tag --list", logInvocation: false, logOutput: false)
-            .ToArray();
-
-        if (tags.Length < 2) return;
-
-        if (changelogBuilder[^1] != '\r' || changelogBuilder[^1] != '\n') changelogBuilder.AppendLine(Environment.NewLine);
-
-        changelogBuilder.Append("Full changelog: ");
-        changelogBuilder.Append(GitRepository.GetGitHubCompareTagsUrl(tags[^1].Text, tags[^2].Text));
-    }
-
-    /// <summary>
     ///     Builds the changelog content for the current release.
     /// </summary>
     StringBuilder BuildChangelog()

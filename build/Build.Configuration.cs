@@ -5,19 +5,6 @@ using Nuke.Common.Tools.Git;
 sealed partial class Build
 {
     /// <summary>
-    ///     Patterns of solution configurations for compiling.
-    /// </summary>
-    string[] Configurations =
-    [
-        "Release*"
-    ];
-
-    /// <summary>
-    ///     Path to build output.
-    /// </summary>
-    readonly AbsolutePath ArtifactsDirectory = RootDirectory / "output";
-
-    /// <summary>
     ///     Releases changelog path.
     /// </summary>
     readonly AbsolutePath ChangelogPath = RootDirectory / "Changelog.md";

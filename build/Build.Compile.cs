@@ -10,13 +10,10 @@ sealed partial class Build
         .DependsOn(Clean)
         .Executes(() =>
         {
-            foreach (var configuration in GlobBuildConfigurations())
-            {
-                DotNetBuild(settings => settings
-                    .SetProjectFile(Solution)
-                    .SetConfiguration(configuration)
-                    .SetVersion(ReleaseVersionNumber)
-                    .SetVerbosity(DotNetVerbosity.minimal));
-            }
+            DotNetBuild(settings => settings
+                .SetProjectFile(Solution)
+                .SetConfiguration("Release")
+                .SetVersion(ReleaseVersionNumber)
+                .SetVerbosity(DotNetVerbosity.minimal));
         });
 }

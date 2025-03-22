@@ -10,7 +10,8 @@ sealed partial class Build
         .Executes(() =>
         {
             DotNetTest(settings => settings
-                .SetConfiguration("Release Engine")
+                .SetProjectFile(Solution)
+                .SetConfiguration("Release")
                 .SetVerbosity(DotNetVerbosity.minimal));
         });
 }
