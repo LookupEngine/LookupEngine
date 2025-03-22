@@ -1,17 +1,16 @@
 # LookupEngine
 
-LookupEngine is a high-performance library for analyzing the internal structure of objects at runtime.
-It evaluates member values and provides detailed properties and diagnostic data.
+A high-performance .NET library for runtime object analysis that provides deep inspection of object members through reflection, with built-in performance metrics and configurable evaluation strategies.
 
 ## Features
 
-- Efficient object decomposition with detailed metadata.
-- Customizable analysis options for including/excluding specific member types.
-- Low allocation and high-performance execution.
-- Support for reflection-based member evaluation.
-- Advanced diagnostic information including computation time and memory allocation per member.
-- Configurable behavior for handling private, static, and unsupported members.
-- Extension and redirection support for enhanced customization.
+- Runtime inspection of public, private and static fields, properties and methods of any object
+- Low-allocation execution with optimized member access for performance-critical operations
+- Built-in computation time and memory allocation tracking for each evaluated member
+- Extensible type descriptor system with custom resolvers and value converters
+- Context-aware member resolution for enhanced metadata and value evaluation
+- Support for multiple value variants based on method overloads and parameters
+- Safe execution model with configurable error handling and member access control
 
 ## How to use
 
