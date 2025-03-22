@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <Nullable>disable</Nullable>
+        <NoWarn>CS0649;CS0169</NoWarn>
+        <TargetFramework>net9.0</TargetFramework>
+        <NukeRootDirectory>..</NukeRootDirectory>
+        <NukeScriptDirectory>..</NukeScriptDirectory>
+        <NukeTelemetryVersion>1</NukeTelemetryVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Nuke.Common"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Using Include="Nuke.Common"/>
+        <Using Include="Nuke.Common.IO"/>
+        <Using Include="Serilog"/>
+    </ItemGroup>
+
+</Project>

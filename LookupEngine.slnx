@@ -1,0 +1,21 @@
+﻿<Solution>
+  <Folder Name="/Automation/">
+    <Project Path="build\Build.csproj" Type="Classic C#">
+      <Configuration Solution="Debug|Any CPU" Project="Debug|Any CPU|NoBuild" />
+    </Project>
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path="Readme.md" />
+    <File Path="Changelog.md" />
+    <File Path="Contributing.md" />
+    <File Path="Build\Build.Configuration.cs" />
+    <File Path="Directory.Packages.props" />
+    <File Path="Directory.Build.props" />
+  </Folder>
+  <Folder Name="/Tests/">
+    <Project Path="tests\LookupEngine.Tests.Performance\LookupEngine.Tests.Performance.csproj" Type="Classic C#" />
+    <Project Path="tests\LookupEngine.Tests.Unit\LookupEngine.Tests.Unit.csproj" Type="Classic C#" />
+  </Folder>
+  <Project Path="source\LookupEngine.Abstractions\LookupEngine.Abstractions.csproj" Type="Classic C#" />
+  <Project Path="source\LookupEngine\LookupEngine.csproj" Type="Classic C#" />
+</Solution>

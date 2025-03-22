@@ -1,0 +1,11 @@
+<Project>
+
+    <!-- Global build configuration -->
+    <PropertyGroup>
+        <Nullable>enable</Nullable>
+        <LangVersion>latest</LangVersion>
+        <PlatformTarget>x64</PlatformTarget>
+        <ImplicitUsings>true</ImplicitUsings>
+    </PropertyGroup>
+
+</Project>

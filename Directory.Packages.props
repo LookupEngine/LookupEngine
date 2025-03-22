@@ -1,0 +1,34 @@
+﻿<Project>
+
+    <!-- Global NuGet configuration -->
+    <PropertyGroup>
+        <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+        <CentralPackageFloatingVersionsEnabled>true</CentralPackageFloatingVersionsEnabled>
+        <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <!-- Data Generation -->
+        <PackageVersion Include="Bogus" Version="35.6.2"/>
+        
+        <!-- Testing -->
+        <PackageVersion Include="BenchmarkDotNet" Version="0.14.0"/>
+        <PackageVersion Include="TUnit" Version="0.18.45"/>
+
+        <!-- Automation Tools -->
+        <PackageVersion Include="Nuke.Common" Version="9.0.4"/>
+        <PackageVersion Include="WixSharp.bin" Version="1.26.0"/>
+        <PackageVersion Include="WixSharp.wix.bin" Version="3.14.1"/>
+
+        <!-- Build -->
+        <PackageVersion Include="ILRepack" Version="2.0.41"/>
+        <PackageVersion Include="JetBrains.Annotations" Version="2024.3.0"/>
+        <PackageVersion Include="System.Diagnostics.DiagnosticSource" Version="9.0.3"/>
+    </ItemGroup>
+
+    <!-- Development References -->
+    <ItemGroup>
+        <GlobalPackageReference Include="PolySharp" Version="1.15.0"/>
+    </ItemGroup>
+
+</Project>
