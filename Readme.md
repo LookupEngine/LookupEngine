@@ -5,7 +5,6 @@ A high-performance .NET library for runtime object analysis that provides deep i
 ## Features
 
 - Runtime inspection of public, private and static fields, properties and methods of any object
-- Low-allocation execution with optimized member access for performance-critical operations
 - Built-in computation time and memory allocation tracking for each evaluated member
 - Extensible type descriptor system with custom resolvers and value converters
 - Context-aware member resolution for enhanced metadata and value evaluation
