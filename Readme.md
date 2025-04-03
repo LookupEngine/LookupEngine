@@ -18,8 +18,6 @@ Basic Example:
 ```C#
 var data = Colors.Red;
 var decomposition = LookupComposer.Decompose(data);
-
-Console.WriteLine(JsonSerializer.Serialize(decomposition));
 ```
 
 Static object:
@@ -27,8 +25,6 @@ Static object:
 ```C#
 var data = typeof(Colors);
 var decomposition = LookupComposer.Decompose(data);
-
-Console.WriteLine(JsonSerializer.Serialize(decomposition));
 ```
 
 Using context to provide additional metadata to the engine:
@@ -36,6 +32,7 @@ Using context to provide additional metadata to the engine:
 ```C#
 // Any object can be used as a context. 
 // It is used by descriptors that require context to resolve members, or add in-context extensions.
+var data = Colors.Red;
 var options = new DecomposeOptions<ExecutionContext>
 {
     Context = new ExecutionContext
@@ -77,11 +74,9 @@ var options = new DecomposeOptions
 };
 
 var decomposition = LookupComposer.Decompose(data, options);
-
-Console.WriteLine(JsonSerializer.Serialize(decomposition));
 ```
 
-Output:
+Decomposition output:
 
 ```json
 {
