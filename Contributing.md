@@ -1,5 +1,17 @@
 ﻿## Table of contents
 
+<!-- TOC -->
+  * [Fork, Clone, Branch and Create your PR](#fork-clone-branch-and-create-your-pr)
+  * [Rules](#rules)
+  * [Building](#building)
+    * [Prerequisites](#prerequisites)
+    * [Compiling Source Code](#compiling-source-code)
+  * [Solution structure](#solution-structure)
+  * [Publishing Releases](#publishing-releases)
+    * [Updating the Changelog](#updating-the-changelog)
+    * [Creating a new Release from the JetBrains Rider](#creating-a-new-release-from-the-jetbrains-rider)
+    * [Creating a new Release from the Terminal](#creating-a-new-release-from-the-terminal)
+<!-- TOC -->
 
 ## Fork, Clone, Branch and Create your PR
 
@@ -28,16 +40,11 @@
 
 ### Prerequisites
 
-- Windows 10 April 2018 Update (version 1803) or newer.
-- One of the following IDEs:
-  - JetBrains Rider 2023.3 or newer.
-  - Visual Studio 2022 (any edition) with following workloads:
-    - .NET desktop development.
-    - .NET Core cross-platform development.
-- Required .NET SDKs:
-  - [.NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/net48)
-  - [.NET 9](https://dotnet.microsoft.com/en-us/download/dotnet)
-- Git for version control.
+- Windows 10 or newer.
+- [.NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/net48).
+- [.NET 9](https://dotnet.microsoft.com/en-us/download/dotnet).
+- [JetBrains Rider](https://www.jetbrains.com/rider/) or [Visual Studio](https://visualstudio.microsoft.com/).
+- [Git](https://git-scm.com/downloads).
 
 ### Compiling Source Code
 
@@ -65,10 +72,10 @@ from [here](https://www.jetbrains.com/rider/).
 | .run    | Run configurations for JetBrains Rider                                           |
 | .nuke   | Build system configuration                                                       |
 
-## Publish a new Release
+## Publishing Releases
 
-Releases are managed by creating new Git tags.
-Tags act as unique identifiers for specific versions, with the ability to roll back to earlier versions.
+Releases are managed by creating new [Git tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging).
+A tag in Git used to capture a snapshot of the project at a particular point in time, with the ability to roll back to a previous version.
 
 Tags must follow the format `version` or `version-stage.n.date` for pre-releases, where:
 
@@ -94,7 +101,20 @@ For example:
 | Beta    | 1.0.0-beta.2.20250101  |
 | Release | 1.0.0                  |
 
-### Creating a new release from the IDE
+### Updating the Changelog
+
+For releases, changelog for the release version is required.
+
+To update the changelog:
+
+1. Navigate to the solution root.
+2. Open the file **Changelog.md**.
+3. Add a section for your version. The version separator is the `#` symbol.
+4. Specify the release number e.g. `# 1.0.0` or `# 25.01.01 v1.0.0`, the format does not matter, the main thing is that it contains the version.
+5. In the lines below, write a changelog for your version, style to your taste. For example, you will find changelog for version 1.0.0, do the same.
+6. Make a commit.
+
+### Creating a new Release from the JetBrains Rider
 
 Publishing a release begins with the creation of a new tag:
 
@@ -110,9 +130,9 @@ Publishing a release begins with the creation of a new tag:
 
    ![image](https://github.com/user-attachments/assets/b2349264-dd76-4c21-b596-93110f1f16cb)
 
-   This process will trigger the Release workflow and create a new release on GitHub.
+   This process will trigger the Release workflow and create a new Release on GitHub.
 
-### Creating a new release from the Terminal
+### Creating a new Release from the Terminal
 
 Alternatively, you can create and push tags using the terminal:
 
@@ -127,23 +147,6 @@ Alternatively, you can create and push tags using the terminal:
    ```shell
    git push origin 'version'
    ```
-### Creating a new release on GitHub
 
-To create releases directly on GitHub:
-
-1. Navigate to the **Actions** section on the repository page.
-2. Select **Publish Release** workflow.
-3. Click **Run workflow** button.
-4. Specify the release version and click **Run**.
-
-   ![image](https://github.com/user-attachments/assets/088388c1-6055-4d21-8d22-70f047d8f104)
-
-> To create a release, changelog for the release version is required.
-
-To update the changelog:
-
-1. Navigate to the solution root.
-2. Open the file **Changelog.md**.
-3. Add a section for your version. The version separator is the `#` symbol.
-4. Specify the release number e.g. `# 1.0.0` or `# Release v1.0.0`, the format does not matter, the main thing is that it contains the version.
-5. In the lines below, write a changelog for your version, style to your taste. For example, you will find changelog for version 1.0.0, do the same.
+> [!NOTE]  
+> The tag will reference your current commit, so verify you're on the correct branch and have fetched latest changes from remote first.
